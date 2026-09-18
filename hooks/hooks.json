@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${extensionPath}/bin/xchg\" inbox --brief 2>/dev/null || true",
+            "timeout": 30000
+          }
+        ]
+      }
+    ],
+    "BeforeAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${extensionPath}/bin/xchg\" inbox --brief --max-age 300 2>/dev/null || true",
+            "timeout": 30000
+          }
+        ]
+      }
+    ]
+  }
+}
